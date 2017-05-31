@@ -1,0 +1,12 @@
+<% unless cart.line_items.empty? %>
+<table class="table">
+  <%= render(cart.line_items) %>
+
+  <tr>
+    <td colspan="2" style="text-align:right; font-weight:bold">Total</td>
+    <td class="info"><%= number_to_currency(cart.total_price) %></td>
+  </tr>
+</table>
+
+<%= button_to 'Empty cart', @cart, method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-danger btn-sm btn-sm' %>
+<% end %>
