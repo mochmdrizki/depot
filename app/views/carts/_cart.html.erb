@@ -8,5 +8,14 @@
   </tr>
 </table>
 
-<%= button_to 'Empty cart', @cart, method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-danger btn-sm btn-sm' %>
+<div class="row">
+  <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+    <%= button_to 'Empty cart', @cart, method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-danger btn-xs' %>
+  </div>
+  <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+    <%= button_to 'Checkout', new_order_path, method: :get, class: 'btn btn-success btn-xs' %>
+  </div>
+</div>
+<% else %>
+<p>Your cart is currently empty.</p>
 <% end %>
