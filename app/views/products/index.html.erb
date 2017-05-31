@@ -1,16 +1,15 @@
 <p id="notice"><%= notice %></p>
 
-<h2>Products</h2>
+<h3>Products</h3>
 
 <table class="table table-striped">
   <% @products.each do |product| %>
     <tr>
-      <td>
-        <b><%= product.title %></b>
-        <%= product.image_url %>
-        <%= product.price %>
+      <td style="text-align:center">
+        <b><%= product.title %></b><br>
+        <center><%= image_tag(product.image_url, class: "img-responsive img-thumbnail", width: "150px") %></center>
       </td>
-      <td><%= truncate(strip_tags(product.description), length: 80) %></td>
+      <td><%= truncate(strip_tags(product.description), length: 100) %></td>
       <td>
         <%= link_to 'Show', product, class: "btn btn-link btn-sm" %>
         <%= link_to 'Edit', edit_product_path(product), class: "btn btn-link btn-sm" %>
